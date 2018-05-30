@@ -33,15 +33,15 @@ public class ShadowGroupControllerTest {
                 .param("jobFunctionCode", "12345"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.values.length()", is(7)))
-                .andExpect(jsonPath("$.values[0]", is("alpha")))
-                .andExpect(jsonPath("$.values[1]", is("bravo")))
-                .andExpect(jsonPath("$.values[2]", is("charlie")))
-                .andExpect(jsonPath("$.values[3]", is("delta")))
-                .andExpect(jsonPath("$.values[4]", is("add")))
-                .andExpect(jsonPath("$.values[5]", is("test.application.com")))
-                .andExpect(jsonPath("$.values[6]", is("mobile")));
+                .andExpect(jsonPath("$.$id", is(1)))
+                .andExpect(jsonPath("$.$values.length()", is(7)))
+                .andExpect(jsonPath("$.$values[0]", is("alpha")))
+                .andExpect(jsonPath("$.$values[1]", is("bravo")))
+                .andExpect(jsonPath("$.$values[2]", is("charlie")))
+                .andExpect(jsonPath("$.$values[3]", is("delta")))
+                .andExpect(jsonPath("$.$values[4]", is("add")))
+                .andExpect(jsonPath("$.$values[5]", is("test.application.com")))
+                .andExpect(jsonPath("$.$values[6]", is("mobile")));
     }
 
     @Test
@@ -50,13 +50,13 @@ public class ShadowGroupControllerTest {
                 .header("User-Agent", "testAgent"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.values.length()", is(5)))
-                .andExpect(jsonPath("$.values[0]", is("alpha")))
-                .andExpect(jsonPath("$.values[1]", is("bravo")))
-                .andExpect(jsonPath("$.values[2]", is("charlie")))
-                .andExpect(jsonPath("$.values[3]", is("delta")))
-                .andExpect(jsonPath("$.values[4]", is("add")));
+                .andExpect(jsonPath("$.$id", is(1)))
+                .andExpect(jsonPath("$.$values.length()", is(5)))
+                .andExpect(jsonPath("$.$values[0]", is("alpha")))
+                .andExpect(jsonPath("$.$values[1]", is("bravo")))
+                .andExpect(jsonPath("$.$values[2]", is("charlie")))
+                .andExpect(jsonPath("$.$values[3]", is("delta")))
+                .andExpect(jsonPath("$.$values[4]", is("add")));
     }
 
     @Test
